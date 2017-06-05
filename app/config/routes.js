@@ -11,12 +11,13 @@ var IndexRoute = router.IndexRoute;
 var Main = require('../components/main');
 var Saved = require("../components/saved");
 var Search = require("../components/search");
-
+var Footer = require('../components/footer');
 module.exports = (
 <Router history={hashHistory}>
-		<Route path="/" component={Main} >
+		<Route path="/" component={Main}>
 		<Route path="Saved" component={Saved} />
 		<Route path="Search" component={Search} />
+		<Route path="Footer" component={Footer} />
 	</Route>
 </Router>
 );

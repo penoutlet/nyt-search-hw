@@ -2,9 +2,20 @@
 
 var React = require('react');
 
+
 var Saved = require('./saved');
 var Search = require('./search');
+var Footer = require('./footer');
 
+
+
+var jumboStyle = {
+		color: 'white',
+		backgroundImage: 'url(https://media.giphy.com/media/lXiRLb0xFzmreM8k8/giphy.gif)'
+	};
+var pageStyle = {
+		backgroundImage: 'url(https://media.giphy.com/media/lXiRLb0xFzmreM8k8/giphy.gif)'
+}
 var main = React.createClass({ 
 	handleclick: function (){
 		var queryurl = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
@@ -25,25 +36,28 @@ var main = React.createClass({
 	// saveToDb: function(){
 
 	// }
-	render: function () {
+		render: function () {
 
 // handleclick = {this.handleclick}
 	return (
 		
-		<div className = "container1">
-			<div className='jumbotron'>
+		<div className = "container1" style={pageStyle}>
+			<div className='jumbotron' style= {jumboStyle}>
 				<h2> NYTimes Search </h2>
 			
 
 		</div>
-			<div className="row">
-			<h2> yo </h2>
-			<Search handleclick = {this.handleclick} />
-		</div>
+				<div className="row">
+				<Search handleclick = {this.handleclick} />
+			</div>
+				<div className = "row">
+				<Saved />
+			</div>
 			<div className = "row">
-			<Saved />
-		</div>
-	</div>	
+				<Footer />
+			</div>
+	</div>
+		
 		);
 	}
 });
